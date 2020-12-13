@@ -5,7 +5,7 @@
 
 ### How to install:
 ```bash
-$ curl  > /usr/bin/git-cherry-picker 2>/dev/null
+$ curl https://raw.githubusercontent.com/graypit/Git-Useful-Codes/master/Git-Cherry-Picker/Git-Cherry-Picker.sh > /usr/bin/git-cherry-picker 2>/dev/null
 $ chmod +x /usr/bin/git-cherry-picker
 ```
 ### How to Use:

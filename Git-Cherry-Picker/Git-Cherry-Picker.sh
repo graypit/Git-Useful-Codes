@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Author: Habib Quliyev 11.30.2020
-# ver: 2.0
 # Global Variables:
 GitFile="$1"
 ToBranch="$2"
@@ -21,11 +20,10 @@ function StartPickingCherries(){
     git checkout $ToBranch
     if [ "$(git cherry-pick $LastCommitIdInFile)" ]
     then
-        git push origin $ToBranch && echo 'Success' || echo 'Oops..Something went wrong' ; exit 1
+        git push origin $ToBranch && echo "Success.Cherry picked and pushed :)" || echo "Oops..We could not push changes to $ToBranch.Do it manually" ; exit 1
     else
-        git add $GitFile && git commit -m "Added $GitFile from $FromBranch" && git push origin $ToBranch && echo 'Success'
+        git add $GitFile && git commit -m "Added $GitFile from $FromBranch" && git push origin $ToBranch && echo "Success.Cherry picked and pushed :)" || echo "Oops..We could not push changes to $ToBranch.Do it manually"
     fi
 }
 GatheringInformation
 StartPickingCherries
-
